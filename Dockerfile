@@ -18,14 +18,13 @@ RUN apt-get update && apt-get install -y \
 
 # Install Python dependencies
 COPY req.txt .
-RUN pip install --no-cache-dir -r req.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy app files into the container
 COPY . .
 
 # Expose default port (optional, mainly metadata)
 EXPOSE 8501
-EXPOSE 8081
 
-# Use PORT env variable from Azure, default to 8501 if not set
-CMD ["sh", "-c", "streamlit run main.py --server.port=${PORT:-8501} --server.address=0.0.0.0"]
+CMD ["streamlit", "run", "app.py", "--server.port=8081", "--server.address=0.0.0.0"]
+
