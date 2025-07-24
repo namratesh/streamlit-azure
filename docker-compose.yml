@@ -1,0 +1,14 @@
+version: "3.9"  # optional but recommended
+
+services:
+  streamlit:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    container_name: streamlit-app
+    ports:
+      - "8081:8501"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+    restart: unless-stopped
