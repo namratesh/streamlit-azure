@@ -27,4 +27,6 @@ COPY . .
 EXPOSE 8501
 
 # Start Streamlit app
-CMD ["streamlit", "run", "main.py", "--server.address=0.0.0.0"]
+# CMD ["streamlit", "run", "main.py", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "main.py", "--server.address=0.0.0.0", "--server.port=80"]
+
