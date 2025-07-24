@@ -31,5 +31,23 @@ and update below {
   "managementEndpointUrl": "https://management.core.windows.net/"
 }
 
+#if get error while pushing run to add subspciption to push
+az ad sp create-for-rbac \
+  --name acr-push-sp \
+  --role acrpush \
+  --scopes /subscriptions/<YOUR_SUBIPTION_ID> \
+  --sdk-auth
 
 
+{
+  "clientId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "clientSecret": "YOUR-SECRET-HERE",
+  "subscriptionId": "yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy",
+  "tenantId": "zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz",
+  "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+  "resourceManagerEndpointUrl": "https://management.azure.com/",
+  "activeDirectoryGraphResourceId": "https://graph.windows.net/",
+  "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
+  "galleryEndpointUrl": "https://gallery.azure.com/",
+  "managementEndpointUrl": "https://management.core.windows.net/"
+}
