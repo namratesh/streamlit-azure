@@ -25,6 +25,7 @@ COPY . .
 
 # Expose default port (mainly for documentation)
 EXPOSE 8501
+EXPOSE 80
 
 # Start Streamlit app
 # CMD ["streamlit", "run", "main.py", "--server.address=0.0.0.0"]
