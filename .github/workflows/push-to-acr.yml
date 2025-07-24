@@ -14,14 +14,10 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Login to Azure
+      - name: Log in to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_1B94D29E142B4E7A8302A6BAD610B72C }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B0E7C5EDBD8D4288A479B3AB62603C2B }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_AFEBC53919AD4AA6B63748F43AF836E5 }}
-          client-secret: ${{ secrets.AZUREAPPSERVICE_CLIENTSECRET}}
-
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Log in to Azure Container Registry (ACR)
         run: az acr login --name ${{ secrets.REGISTRY_NAME }}
